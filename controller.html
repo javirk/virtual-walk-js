@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Street View Side-By-Side</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map, #pano {
+        float: left;
+        height: 100%;
+        width: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pano"></div>
+    <script type="text/javascript" src='controller_test.js'></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2EREMDegaLroYtfgtlfNzIuxNY4OGHHE&callback=initialize">
+    </script>
+  </body>
+</html>
