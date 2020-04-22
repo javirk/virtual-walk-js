@@ -1,6 +1,12 @@
 class LSTM_model {
 	constructor() {
-		this.load();
+		try {
+			this.load();
+			select('#status_lstm').html('LSTM loaded');
+		} catch (e) {
+			console.log('Error while loading LSTM model')
+		}
+
 	}
 
 	async load(){
