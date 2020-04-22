@@ -4,7 +4,8 @@ class LSTM_model {
 	}
 
 	async load(){
-		this.model = await tf.loadLayersModel('http://localhost:8000/model/LSTM/model.json');
+		//this.model = await tf.loadLayersModel('http://localhost:8000/model/LSTM/model.json');
+		this.model = await tf.loadLayersModel('localstorage://model/LSTM/model.json')
 	}
 
 	predict(coords) {

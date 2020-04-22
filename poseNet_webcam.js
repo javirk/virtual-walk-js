@@ -32,7 +32,7 @@ function setup() {
   input.position(20, 65);
 
   button = createButton('load key');
-  button.mousePressed(load_maps);
+  //button.mousePressed(load_maps);
 
   webcam_output = createCapture(VIDEO);
   webcam_output.size(width, height);
