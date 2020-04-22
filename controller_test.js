@@ -7,7 +7,7 @@ class Controller {
       document.getElementById('pano'), {
         position: init_pos,
         pov: {
-          heading: ,
+          heading: 34,
           pitch: 3.40
         }
       });

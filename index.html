@@ -10,16 +10,36 @@
     <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
     <!-- TF -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+    <script src="lstm_model.js"></script>
+    <script src="poseNet_webcam.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map, #pano {
+        float: left;
+        height: 45%;
+        width: 45%;
+      }
+    </style>
 </head>
 
 <body>
   <!-- Show a cute intro to the user -->
   <h1>Welcome to demo of poseNet ML model</h1>
-  <!-- As loading takes time, show the below message. We will change this later when the model 
+  <!-- As loading takes time, show the below message. We will change this later when the model
     will be ready to use using id name "status" to change the text inside.-->
-  <p id='status'>Loading model...</p>
-  <!-- put our poseNet code. We seperated this to another file for better readability.-->
-  <script src="poseNet_webcam.js"></script>
+  <p id='status_posenet'>Loading posenet...</p>
+  <p id='status_lstm'>Loading LSTM...</p>
+
+  <div id="pano"></div>
+  <script type="text/javascript" src='controller_test.js'></script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYz7fW2b2wG6PzKUHgKKzSD8s5xeaeivs&callback=initialize">
+  </script>
+
 </body>
 
 </html>

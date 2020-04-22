@@ -3,7 +3,7 @@ let data_x;
 let data_y;
 
 async function loadModel(){
-	return await tf.loadLayersModel('http://localhost:8000/omodel/LSTM/model.json');
+	return await tf.loadLayersModel('http://localhost:8000/model/LSTM/model.json');
 }
 
 async function prepareData(){
