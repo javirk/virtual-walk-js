@@ -8,6 +8,7 @@ let lstm_model;
 let poses = [];
 let person_list = [];
 let controller;
+let input;
 
 const options = {
   architecture: 'ResNet50',
@@ -27,6 +28,12 @@ let time_between_actions = 0.5; // In seconds
 function setup() {
   createCanvas(640, 480);
 
+  input = createInput();
+  input.position(20, 65);
+
+  button = createButton('load key');
+  button.mousePressed(load_maps);
+
   webcam_output = createCapture(VIDEO);
   webcam_output.size(width, height);
   //c = new Controller()
@@ -40,6 +47,12 @@ function setup() {
 async function load_model() {
   lstm_model = await load_lstm();
   lstm_ready();
+}
+
+function load_maps() {
+  var imported = document.createElement('script');
+  imported.src = 'https://maps.googleapis.com/maps/api/js?key='+ input.value() + '&callback=initialize';
+  document.head.appendChild(imported);
 }
 
 async function gotPose(results){
